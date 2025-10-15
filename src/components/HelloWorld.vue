@@ -1,12 +1,22 @@
 <script setup lang="ts">
-defineProps<{
-  msg: string
+import { ref, onMounted } from 'vue'
+
+const props = defineProps<{
+  name: string
 }>()
+
+const message = ref('')
+
+onMounted(async () => {
+  const res = await fetch(`/api/message?name=${props.name}`)
+  const data = await res.json()
+  message.value = data.message
+})
 </script>
 
 <template>
   <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
+    <h1 class="green">{{ message }}</h1>
     <h3>
       You’ve successfully created a project with
       <a href="https://vite.dev/" target="_blank" rel="noopener">Vite</a> +
