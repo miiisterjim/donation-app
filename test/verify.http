@@ -1,0 +1,4 @@
+# verify
+## Sample Hand off URL https://link.staging.justgiving.com/v1/page/donate/pageid/79beab35-e58e-47c2-82d8-8d55cd513317?amount=10&exitUrl=https://witty-water-09a5b2c03.1.azurestaticapps.net%3FjgDonationId%3DJamesRef1&reference=JamesRef1
+GET https://api.staging.justgiving.com/181af5b3/v1/Donation/ref/JamesRef1
+
